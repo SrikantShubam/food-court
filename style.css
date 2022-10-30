@@ -194,22 +194,22 @@ input[type=text]:hover {
 }
 
 .veg {
-  background-color: var(--success);
+  background-color: var(--success)!important;
 }
 
 
 .nonveg {
-  background-color: var(--danger);
+  background-color: var(--danger)!important;
 }
 
 
 
 .dessert {
-  background-color: var(--bronze);
+  background-color: var(--bronze)!important;
 }
 
 .last10 {
-  background-color: var(--gold);
+  background-color: var(--gold)!important;
 }
 
 #filter button {
@@ -300,3 +300,48 @@ padding: 2rem;
 
 }
 
+
+
+
+
+/*loader animation */
+
+
+
+svg {
+  position: absolute;
+  width: 240px;
+  height: 120px;
+  top: 0; right: 0;
+  bottom: 0; left: 0; 
+  margin: auto;
+}
+
+svg #plug,
+svg #socket {
+  fill:#FDB515;
+}
+
+svg #loop-normal {
+  fill: none;
+  stroke: #FDB515;
+  stroke-width: 12;
+}
+
+svg #loop-offset {
+  display: none;
+}
+
+.credit {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.credit a {
+  color: #FDB515;
+  font: 800 75% "Open Sans", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+}
