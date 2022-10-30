@@ -305,43 +305,81 @@ padding: 2rem;
 
 
 /*loader animation */
-
-
-
-svg {
-  position: absolute;
-  width: 240px;
-  height: 120px;
-  top: 0; right: 0;
-  bottom: 0; left: 0; 
-  margin: auto;
+@keyframes loader {
+	0%, 10%, 100% {
+		width: 80px;
+		height: 80px;
+	}
+	65% {
+		width: 150px;
+		height: 150px;
+	}
 }
+@keyframes loaderBlock {
+	0%, 30% { 
+		transform: rotate(0);
+	}
+	55% {
+		background-color: #F37272;
+	}
+	100% {
+		transform: rotate(90deg);
 
-svg #plug,
-svg #socket {
-  fill:#FDB515;
+	}
 }
+@keyframes loaderBlockInverse {
+	0%, 20% { 
+		transform: rotate(0);
+	}
+	55% {
+		background-color: #F37272;
+	}
+	100% {
+		transform: rotate(-90deg);
+	}
+}
+.loader {
+  
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%) rotate(45deg) translate3d(0,0,0);
+	animation: loader 1.2s infinite ease-in-out;
+  z-index: 100;
+}
+.loader span {
+		position: absolute;
+		display: block;
+		width: 40px;
+		height: 40px;
+		
+		animation: loaderBlock 1.2s infinite ease-in-out both;
+  }
+  .loader span:nth-child(1) {
+			top: 0;
+			left: 0;
+      background-color: var(--danger);
+		}
+		.loader span:nth-child(2) {
+			top: 0;
+			right: 0;
+			animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+      background-color: var(--bronze);
+		} 
+    .loader span:nth-child(3) {
+			bottom: 0;
+			left: 0;
+			animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+      background-color: var(--gold);
+		}
+    .loader span:nth-child(4) {
+			bottom: 0;
+			right: 0;
+      background-color: var(--success);
+		}
+  
+	
 
-svg #loop-normal {
-  fill: none;
-  stroke: #FDB515;
-  stroke-width: 12;
-}
-
-svg #loop-offset {
-  display: none;
-}
-
-.credit {
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
-  text-align: center;
-}
-
-.credit a {
-  color: #FDB515;
-  font: 800 75% "Open Sans", sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-}
+  
