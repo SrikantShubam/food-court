@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOOD COURT:{{number.no}},{{dish_name}}</title>
+    <title>FOOD COURT:{{dish.d}},{{dish.d_Name}}</title>
     <link rel="icon" href="{% static 'img/final32.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -42,9 +42,10 @@
 
         img {
             /* object-fit: contain; */
+          
             object-fit: cover;
 
-
+margin-top: 25%;
 
 
 
@@ -80,13 +81,17 @@
             margin-left: 4rem;
             margin-top: 2.6rem;
         }
-
+      
         @media only screen and (max-width: 700px) {
             .text {
 
                 margin-top: 1rem !important;
                 margin-left: 2rem!important;
             }
+            .text-2 {
+
+margin-left: 3rem!important;
+}
             .card-box {
             margin-top: 5em;
             margin-left: 0em;
@@ -126,7 +131,7 @@
             #DESC {
                 position: relative;
                 background-color: white;
-                top: -9rem;
+                top: -2rem;
                 max-width: 100%;
                 width: calc(90%);
                 left: calc(4.3%);
@@ -149,6 +154,9 @@
             .marge{
                 margin-left: 9rem!important;
             }
+            img{
+                margin-top: 0;
+            }
         }
     </style>
     <div class="container ">
@@ -156,7 +164,7 @@
         <a href="leaderboard.html"><button class="" id="back"><i class="fa-solid fa-2x fa-chevron-left"></i>
             </button></a>
         <div class="row">
-            <div class="col-sm-12 col-lg-8">
+            <div class="col-sm-12 col-lg-8 ">
                 <img src="{{ BASIC_DIR }}/uploads/{{dish.d_Photo}}" alt="" class="img-fluid ">
 
             </div>
@@ -165,7 +173,7 @@
                 <div class="card-box d-flex align-items-center">
                     <h3 >{{dish.d_Name}}</h1>
                 
-                        <h3 class="marge" style="margin-left: 14rem;">₹{{dish.d_Price}}</h3>
+                        <h3 class="text-2" style="margin-left: 4rem" >₹{{dish.d_Price}}</h3>
 
                 </div>
                 <div class="ms-3">

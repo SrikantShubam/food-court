@@ -33,24 +33,27 @@
     #title {
         font-size: 5rem !important;
     }
-    .gola{
-            
 
-            border-radius: 50%;
-            height: 30px;
-            width: 30px;
-            
-            
-                    }
+    .gola {
 
-                    .normal {
-  background-color: #343434!important;
+
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+
+
+    }
+
+    .normal {
+        background-color: #343434 !important;
+    }
+h6{
+    font-size: 30px;
 }
-
 
     @media only screen and (max-width: 700px) {
         #title {
-            font-size: 3rem !important;
+            font-size: 4rem !important;
         }
 
         .award {
@@ -60,7 +63,7 @@
         .award-2 {
             left: calc(100% - 1em);
         }
-      
+
 
         h4 {
             font-size: 1rem;
@@ -92,6 +95,9 @@
             position: relative;
             left: -80px;
 
+        }
+        h6{
+            font-size: 25px;
         }
     }
 
@@ -229,19 +235,19 @@
     }
 </style>
 
-<body >
+<body>
 
     <nav role="navigation">
         <div id="menuToggle">
-           
+
             <input type="checkbox" />
 
-          
+
             <span></span>
             <span></span>
             <span></span>
 
-        
+
             <ul id="menu">
                 <a href="#">
                     <li>Home &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-house"></i></li>
@@ -278,7 +284,7 @@
                 COURT
             </div>
         </h1>
-        <h6 class="text-center lb mb-5">Wednesday,26/10/2022</h6>
+        <h6 class="text-center lb mb-5" >Wednesday,26/10/2022</h6>
         <br><br><br><br>
 
         <!-- <div class="row mt-5 ">
@@ -364,12 +370,12 @@
 
 
                 <br>
-
+                {% for dish in dish %}
 
 
                 <div class="d-flex flex-column  mt-5">
 
-                    {% for dish in dish %}
+
                     <!------------4-->
                     <a href="/dish_details/{{ dish.dish_Id }}" style="text-decoration: none; color: inherit;">
                         <div class="card-2">
@@ -394,7 +400,7 @@
                                 </div>
                                 <div class="col-3 mt-5" id="price">
 
-                                    <h4>₹ {{dish.d_Price}}</h4>
+                                    <h4>₹{{dish.d_Price}}</h4>
                                 </div>
                                 <div class="col-3 ">
 
@@ -409,10 +415,13 @@
 
 
                             </div>
+                            </div>
                     </a>
-                    {% endfor %}
 
-                    <!-- <div class="card-2 mt-5">
+                    <br>
+                    {% endfor %}
+                </div>
+                <!-- <div class="card-2 mt-5">
 <div class="row">
 
     <div class="col-4  ">
@@ -440,179 +449,15 @@
 
 </div> -->
 
-                    <br>
 
-                    <div class="d-flex flex-column  mt-5">
 
-                        <!-- {% for dish in dish %} -->
-                        <!------------4-->
-                        <a href="/dish_details/{{ dish.dish_Id }}" style="text-decoration: none; color: inherit;">
-                            <div class="card-2">
-                                <div class="row">
 
-                                    <div class="col-3  ">
-                                        <h3>
-                                            <div class="circle gola award-2 silver">&nbsp;2</div>
-                                        </h3>
 
 
-                                        <img src="/foodCourt/static/img/i4.jpg" alt="dish_img" class="img-fluid p-2">
 
-                                    </div>
-                                    <div class="col-3 mt-5">
-                                        <h4 style=" white-space: nowrap "> <b>{{dish.d_Name}}</b></h4>
 
 
 
-
-                                    </div>
-                                    <div class="col-3 mt-5" id="price">
-
-                                        <h4>₹ 200</h4>
-                                    </div>
-                                    <div class="col-3 ">
-
-                                        <div class="h-100 d-flex justify-content-between align-items-center">
-
-                                            <h4 class="" style="white-space: nowrap;" id="votes">{{dish.d_Votes}} votes
-                                            </h4>
-                                            <i class="mr-auto fa-solid fa-sharp fa-3x fa-angle-up ar-red  "
-                                                style="margin-right: 3.5rem;"></i>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                        </a>
-                        <!-- {% endfor %} -->
-
-
-
-
-
-                    </div>
-
-
-                    <div class="d-flex flex-column  mt-5">
-
-
-                        <!------------4-->
-                        <a href="/dish_details/{{ dish.dish_Id }}" style="text-decoration: none; color: inherit;">
-                            <div class="card-2">
-                                <div class="row">
-
-                                    <div class="col-3  ">
-                                        <h3>
-                                            <div class="circle gola award-2 bronze">&nbsp;3</div>
-                                        </h3>
-
-
-                                        <img src="/foodCourt/static/img/i4.jpg" alt="dish_img" class="img-fluid p-2">
-
-                                    </div>
-                                    <div class="col-3 mt-5">
-                                        <h4 style=" white-space: nowrap "> <b>{{dish.d_Name}}</b></h4>
-
-
-
-
-                                    </div>
-                                    <div class="col-3 mt-5" id="price">
-
-                                        <h4>₹ 200</h4>
-                                    </div>
-                                    <div class="col-3 ">
-
-                                        <div class="h-100 d-flex justify-content-between align-items-center">
-
-                                            <h4 class="" style="white-space: nowrap;" id="votes">150 votes </h4>
-                                            <i class="mr-auto fa-solid fa-sharp fa-3x fa-angle-up ar-red  "
-                                                style="margin-right: 3.5rem;"></i>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                        </a>
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-
-
-
-                    <div class="d-flex flex-column  mt-5">
-
-                        <!------------4-->
-                        <a href="/dish_details/{{ dish.dish_Id }}" style="text-decoration: none; color: inherit;">
-                            <div class="card-2">
-                                <div class="row">
-
-                                    <div class="col-3  ">
-                                        <h3>
-                                            <div class="circle gola award-2 normal">&nbsp;4</div>
-                                        </h3>
-
-
-                                        <img src="/foodCourt/static/img/i4.jpg" alt="dish_img" class="img-fluid p-2">
-
-                                    </div>
-                                    <div class="col-3 mt-5">
-                                        <h4 style=" white-space: nowrap "> <b>{{dish.d_Name}}</b></h4>
-
-
-
-
-                                    </div>
-                                    <div class="col-3 mt-5" id="price">
-
-                                        <h4>₹ 200</h4>
-                                    </div>
-                                    <div class="col-3 ">
-
-                                        <div class="h-100 d-flex justify-content-between align-items-center">
-
-                                            <h4 class="" style="white-space: nowrap;" id="votes">150 votes </h4>
-                                            <i class="mr-auto fa-solid fa-sharp fa-3x fa-angle-up ar-red  "
-                                                style="margin-right: 3.5rem;"></i>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                        </a>
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-
-
-
-
-
-
-
-                </div>
 
 
 
@@ -637,3 +482,169 @@
 <script src="{% static 'js/preloader.js' %}"></script>
 
 </html>
+
+
+<!-- 
+<div class="d-flex flex-column  mt-5">
+
+
+
+    <a href="/dish_details/{{ dish.dish_Id }}" style="text-decoration: none; color: inherit;">
+        <div class="card-2">
+            <div class="row">
+
+                <div class="col-3  ">
+                    <h3>
+                        <div class="circle gola award-2 silver">&nbsp;2</div>
+                    </h3>
+
+
+                    <img src="/foodCourt/static/img/i4.jpg" alt="dish_img" class="img-fluid p-2">
+
+                </div>
+                <div class="col-3 mt-5">
+                    <h4 style=" white-space: nowrap "> <b>{{dish.d_Name}}</b></h4>
+
+
+
+
+                </div>
+                <div class="col-3 mt-5" id="price">
+
+                    <h4>₹ 200</h4>
+                </div>
+                <div class="col-3 ">
+
+                    <div class="h-100 d-flex justify-content-between align-items-center">
+
+                        <h4 class="" style="white-space: nowrap;" id="votes">{{dish.d_Votes}} votes
+                        </h4>
+                        <i class="mr-auto fa-solid fa-sharp fa-3x fa-angle-up ar-red  "
+                            style="margin-right: 3.5rem;"></i>
+
+                    </div>
+                </div>
+
+
+            </div>
+    </a>
+  
+
+
+
+
+
+</div>
+
+
+<div class="d-flex flex-column  mt-5">
+
+
+ 
+    <a href="/dish_details/{{ dish.dish_Id }}" style="text-decoration: none; color: inherit;">
+        <div class="card-2">
+            <div class="row">
+
+                <div class="col-3  ">
+                    <h3>
+                        <div class="circle gola award-2 bronze">&nbsp;3</div>
+                    </h3>
+
+
+                    <img src="/foodCourt/static/img/i4.jpg" alt="dish_img" class="img-fluid p-2">
+
+                </div>
+                <div class="col-3 mt-5">
+                    <h4 style=" white-space: nowrap "> <b>{{dish.d_Name}}</b></h4>
+
+
+
+
+                </div>
+                <div class="col-3 mt-5" id="price">
+
+                    <h4>₹ 200</h4>
+                </div>
+                <div class="col-3 ">
+
+                    <div class="h-100 d-flex justify-content-between align-items-center">
+
+                        <h4 class="" style="white-space: nowrap;" id="votes">150 votes </h4>
+                        <i class="mr-auto fa-solid fa-sharp fa-3x fa-angle-up ar-red  "
+                            style="margin-right: 3.5rem;"></i>
+
+                    </div>
+                </div>
+
+
+            </div>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="d-flex flex-column  mt-5">
+
+
+    <a href="/dish_details/{{ dish.dish_Id }}" style="text-decoration: none; color: inherit;">
+        <div class="card-2">
+            <div class="row">
+
+                <div class="col-3  ">
+                    <h3>
+                        <div class="circle gola award-2 normal">&nbsp;4</div>
+                    </h3>
+
+
+                    <img src="/foodCourt/static/img/i4.jpg" alt="dish_img" class="img-fluid p-2">
+
+                </div>
+                <div class="col-3 mt-5">
+                    <h4 style=" white-space: nowrap "> <b>{{dish.d_Name}}</b></h4>
+
+
+
+
+                </div>
+                <div class="col-3 mt-5" id="price">
+
+                    <h4>₹ 200</h4>
+                </div>
+                <div class="col-3 ">
+
+                    <div class="h-100 d-flex justify-content-between align-items-center">
+
+                        <h4 class="" style="white-space: nowrap;" id="votes">150 votes </h4>
+                        <i class="mr-auto fa-solid fa-sharp fa-3x fa-angle-up ar-red  "
+                            style="margin-right: 3.5rem;"></i>
+
+                    </div>
+                </div>
+
+
+            </div>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div> -->
