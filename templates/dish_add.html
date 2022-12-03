@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div style="margin: 50px; padding: 10px; border: 2px solid orange; border-radius: 5px;">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-7">
+                <div class="form-group">
+                  <label for="dName">Dish Name</label>
+                  <input type="text" class="form-control" name="dName" id="dName" placeholder="Poha">
+                </div> <br>
+              </div>
+              <div class="col-5">
+                <div class="form-group">
+                  <label for="dName">Dish Price</label>
+                  <input type="number" class="form-control" name="dPrice" id="dPrice" placeholder="">
+                </div> <br>
+              </div>
+            </div>
+
+              <div class="form-group">
+                <label for="dDescription">Dish Description</label>
+                <textarea class="form-control" name="dDescription" id="dDescription" rows="3"></textarea>
+              </div> <br>
+              <div class="form-group">
+                <label for="dIngredients">Dish Ingredients</label>
+                <textarea class="form-control" name="dIngredients" id="dIngredients" rows="3"></textarea>
+              </div> <br>
+              <div class="row">
+
+                <div class="col" style="padding-left: 80px;">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="dtype" id="inlineRadio1" value="Veg">
+                        <label class="form-check-label" for="inlineRadio1">Veg</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="dtype" id="inlineRadio2" value="nonVeg">
+                        <label class="form-check-label" for="inlineRadio2">nonVeg</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="dPhoto">Upload Dish Photo</label>
+                        <input type="file" class="form-control-file" name="dPhoto" id="dPhoto">
+                      </div>
+                </div>
+              </div> <br>
+              <div class="row">
+                <div class="col-5"></div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+              </div>
+              
+          </form>
+
+          <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="container-fluid p-0">
+                  <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" >
+                    <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="True">&times;</span>
+                    </button> -->
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+            </div>
+          </div>
+          
+    </div>
+
+      <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

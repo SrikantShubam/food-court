@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>FOOD COURT:{{number.no}},{{dish_name}}</title>
+    <link rel="icon" href="final32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <style>
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container-fluid g-0 xs sm d-lg-none d-md-none d-xl-none">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        <div class=" d-flex flex-column  ">
+            <a href="leaderboard.html"><button class="" id="back"><i class="fa-solid fa-2x fa-chevron-left"></i>
+            </button></a>
+            <img src="{% static 'img/i1.jpg' %}" alt="" srcset="" class="scale-down-top">
+            <div class="card fadeInUp">
+                <div class="card-body">
+                    <div class="row">
+                        <hr class="hr hr-18 mb-4" />
+
+                        <div class="col-8 mt-2">
+
+                            <h2 class="card-title" id="#dish_name"> Pancakes</h2>
+                        </div>
+                        <div class="col-4">
+                            <h4 class="mt-4 ar-green"><i class="fas fa-duotone fa-star "></i>&nbsp;200</h4>
+                        </div>
+                    </div>
+
+                    <h5 class="card-subtitle mb-2 mt-2">Description</h5>
+                    <p class="card-text" id="description_dish">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Voluptatum, ipsam
+                        officiis.</p>
+
+
+
+                    <h5 class="card-subtitle mb-2 mt-2">Ingredients</h5>
+                    <p class="card-text" id="ingredients_dish">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Voluptatum, ipsam
+                        officiis.</p>
+                    <a href="" class="noDecoration">
+                        <div class="text-center">
+
+                            {% if enable %}
+                             <input type="submit" name="upload" onclick="" id="button" class="btn btn-primary" value="Vote" />
+
+                            {% else %}
+                             <input type="submit" name="upload" class="btn btn-primary" value="Vote" disabled/>
+
+                            {% endif %}
+
+                            <!-- <button class="btn text-center noDecoration mb-5">
+                                Vote Now</button> -->
+                        </div>
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+<!-- For Desktop & Laptop screens -->
+    <div class="d-none d-lg-inline">
+        <div class="">
+            <div class="row m-5">
+              
+             <div class="col-6 p-5">
+    
+                <div class="m-5">
+                    <img src="{{ BASIC_DIR }}/uploads/{{dish.d_Photo}}" alt="dish_img" style="width: 500px; height: 500px; left: 4rem; scale: 1;">
+                </div>
+                <!-- <ul class="thumb">
+                  <li>
+                    <span> <a href="" link="{{ BASIC_DIR }}/uploads/{{product.product_image1}}"  target="imgBox"> 
+                      <img class="imgprop" src="{{ BASIC_DIR }}/uploads/{{product.product_image1}}" alt="">
+                    </a> </span>
+                  </li>
+                </ul> -->
+
+             </div>
+    
+             <div class="col-6">
+              <div class="row">
+                <span class="row" style="color: black; font-size: 1.5rem; font-weight: 500;">
+                  {{dish.d_Name}}
+                </span>
+                <!-- <span class="row" style="color: #005C45; font-size:2rem; font-weight: 500;">
+                  ₹ {{product.expected_price}}
+                </span> -->
+                <span class="row" style="font-size: 1.2rem; max-height: 90px; white-space: wrap; overflow: hidden; text-overflow: ellipsis;">
+                  {{dish.d_Description}}
+                </span>
+                <h5 class="card-header" style="background-color: #a5fae5; color: black; font-weight: 600;">Ingredients</h5>
+                <span class="row" style="font-size: 1.2rem; max-height: 90px; white-space: wrap; overflow: hidden; text-overflow: ellipsis;">
+                  {{dish.d_Ingredients}}
+                </span>
+
+<!-- <a href="#" class="noDecoration"> -->
+  <div class="text-center">
+    <form method="post">
+      {% csrf_token %}
+      {% if enable %}
+      <!-- <form method="post">
+        {% csrf_token %} -->
+       <button type="submit" name="upload" onclick="" id="button1" class="btn btn-primary" value="" > Vote </button>
+      <!-- </form> -->
+      {% else %}
+      <!-- <form method="post">
+        {% csrf_token %} -->
+       <button type="submit" name="upload" class="btn btn-primary" value="" disabled> We Received Your Vote </button>
+      <!-- </form> -->
+      {% endif %}
+    </form>
+      <!-- <button class="btn text-center noDecoration mb-5">
+          Vote Now</button> -->
+  </div>
+
+<!-- </a> -->
+    
+              </div>
+
+              <!-- <div class="row" style="margin-top: 20px;">
+                <div class="card" style="padding-left: 0; padding-right: 0;" >
+                  <h5 class="card-header" style="background-color: #a5fae5; color: black; font-weight: 600;">Contact Details</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Name: {{seller_details.user_name}}</h5>
+                    <h5 class="card-title">Email: {{seller_details.email}}</h5>
+                    <h5 class="card-title">Mobile Number: {{seller_details.mobile_number}}</h5>
+                  </div>
+                </div>
+              </div> -->
+    
+             </div>
+    
+    
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+    <!-------javascript bundle----->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="{% static 'js/preloader.js' %}"></script>
+
+
+        <script>
+          function onCdisable() {
+  document.getElementById("button1").disabled = true;
+}
+        </script>
+
+
+</body>
+
+</html>

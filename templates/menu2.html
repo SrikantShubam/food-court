@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOD COURT:{{number.no}},{{dish_name}}</title>
+    <link rel="icon" href="{% static 'img/final32.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <style>
+        :root {
+            --success: #02AA14;
+            --danger: #E13A45;
+            --white: #FFFFFF;
+            --sec-white: #f9f9f9;
+            --black: rgb(0, 0);
+            --light-black: #343434;
+            --light-black: #afafaf;
+            --silver: #AEADAB;
+            --bronze: #AF8C65;
+            --gold: #F8A42C;
+
+        }
+    
+        body {
+            overflow-y: hidden;
+            width: 100vw;
+            background-image: url("{% static 'img/background.png' %}");
+        }
+
+        img {
+            /* object-fit: contain; */
+            object-fit: cover;
+
+
+
+
+
+        }
+
+        #back {
+            width: 2.7rem;
+            height: 2.7rem;
+            background-color: white;
+            border-radius: 7px;
+            border: none;
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+        }
+
+        .card-box {
+            margin-top: 10em;
+            margin-left: 4em;
+
+        }
+
+        .btn {
+            background-color: #02AA14 !important;
+            border-radius: 18px;
+            color: white;
+            font-size: 20px;
+            margin-top: 2rem;
+            width: 17rem;
+        }
+
+        .text {
+            margin-left: 4rem;
+            margin-top: 2.6rem;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .text {
+
+                margin-top: 1rem !important;
+                margin-left: 2rem!important;
+            }
+            .card-box {
+            margin-top: 5em;
+            margin-left: 0em;
+            padding-left: 2em;
+            
+
+        }
+            body {
+                overflow-x: hidden;
+                overflow-y: scroll;
+                opacity: 1;
+
+                box-sizing: border-box;
+            }
+
+            .container {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+
+            p {
+                width: 85% !important;
+            }
+
+            h3,
+            h4 {
+                font-size: 25px;
+
+            }
+
+            body {
+                background: none;
+
+            }
+
+            #DESC {
+                position: relative;
+                background-color: white;
+                top: -9rem;
+                max-width: 100%;
+                width: calc(90%);
+                left: calc(4.3%);
+                height: calc(70%) !important;
+
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 38px;
+
+            }
+
+            p,
+            h3,
+            h4 {
+                margin: 0 !important;
+            }
+
+            .card-box {
+                margin-left: 1rem;
+            }
+            .marge{
+                margin-left: 9rem!important;
+            }
+        }
+    </style>
+    <div class="container ">
+       
+        <a href="leaderboard.html"><button class="" id="back"><i class="fa-solid fa-2x fa-chevron-left"></i>
+            </button></a>
+        <div class="row">
+            <div class="col-sm-12 col-lg-8">
+                <img src="{{ BASIC_DIR }}/uploads/{{dish.d_Photo}}" alt="" class="img-fluid ">
+
+            </div>
+
+            <div class="col-sm-12 col-lg-4 " id="DESC">
+                <div class="card-box d-flex align-items-center">
+                    <h3 >{{dish.d_Name}}</h1>
+                
+                        <h3 class="marge" style="margin-left: 14rem;">₹{{dish.d_Price}}</h3>
+
+                </div>
+                <div class="ms-3">
+
+                    <h4 class="mt-4 ar-green text"><i class="fas fa-duotone fa-star "></i>&nbsp;{{dish.d_Votes}}</h4>
+
+
+                    <h3 class="  text">Description</h3>
+                    <p class="   text" style="width:30vw;">{{dish.d_Description}}</p>
+                    <h3 class="  text">Ingredients</h3>
+                    <p class="   text" style="width:30vw;">{{dish.d_Ingredients}}</p>
+
+
+                </div>
+
+                <a href="#" class="noDecoration">
+                    <div class="text-center">
+                        <button class="btn text-center noDecoration mb-5">
+                            Vote Now</button>
+                    </div>
+
+                </a>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+    </div>
+
+</body>
+<!-------javascript bundle----->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="{% static 'js/preloader.js' %}></script>
+
+</html>
