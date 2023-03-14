@@ -59,3 +59,26 @@ Contributions are welcome! If you have any suggestions or find any issues, pleas
 
 # 📝 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+# Screenshots:
+## Home page
+[![Screenshot-2023-03-14-103058.jpg](https://i.postimg.cc/FKHZKHMS/Screenshot-2023-03-14-103058.jpg)](https://postimg.cc/v4C9qbH8)
+
+## Leaderboard
+[![Screenshot-2023-03-14-103223.jpg](https://i.postimg.cc/HxCk2rTc/Screenshot-2023-03-14-103223.jpg)](https://postimg.cc/d74FQtkw)
+
+
+## Login Page
+[![Screenshot-2023-03-14-103344.jpg](https://i.postimg.cc/02LRmLkr/Screenshot-2023-03-14-103344.jpg)](https://postimg.cc/RNQDxpnz)
+
+## Sign Up Page
+[![Screenshot-2023-03-14-103501.jpg](https://i.postimg.cc/DznNPhtf/Screenshot-2023-03-14-103501.jpg)](https://postimg.cc/gxt4GCz1)
+
+## Dish details
+[![Screenshot-2023-03-14-103607.jpg](https://i.postimg.cc/HLWgsbWt/Screenshot-2023-03-14-103607.jpg)](https://postimg.cc/3kq6t4vy)
+
+## Add dish
+[![Screenshot-2023-03-14-103738.jpg](https://i.postimg.cc/J0ZgQh4n/Screenshot-2023-03-14-103738.jpg)](https://postimg.cc/V0sDfmtQ)
+
+
